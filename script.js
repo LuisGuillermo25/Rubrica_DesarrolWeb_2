@@ -25,3 +25,5 @@ const calcular = () => {
 };
 
 const borrar = () => pantalla.value = "";
+
+const borrarUltimo = () => pantalla.value = pantalla.value.slice(0, -1);

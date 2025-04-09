@@ -6,6 +6,7 @@ body {
   background: linear-gradient(135deg, rgb(178, 224, 11), rgb(96, 96, 168), green);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -83,6 +84,15 @@ button:nth-child(15):hover {
   box-shadow: 0 0 10px #1eff5d;
 }
 
+/* Pie de página con créditos */
+.creditos {
+  margin-top: 20px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+}
+
 /* Responsive */
 @media (max-width: 400px) {
   .calculadora {
@@ -94,4 +104,15 @@ button:nth-child(15):hover {
     padding: 12px;
     font-size: 16px;
   }
+}
+
+.creditos strong {
+  color: #fff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: default;
+}
+
+.creditos strong:hover {
+  color: #00f7ff;
+  text-shadow: 0 0 5px #00f7ff, 0 0 10px #00f7ff;
 }
