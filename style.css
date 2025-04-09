@@ -1,68 +1,97 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, rgb(178, 224, 11), rgb(96, 96, 168), green);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  animation: fondoAnimado 10s infinite alternate;
+}
+
+@keyframes fondoAnimado {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.calculadora {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+.calculadora:hover {
+  transform: scale(1.02);
+}
+
+.pantalla {
+  width: 100%;
+  height: 60px;
+  background: #c7c0c0;
+  border: none;
+  font-size: 26px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  text-align: right;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s;
+}
+.pantalla:focus {
+  box-shadow: 0 0 10px #00f7ff;
+}
+
+.botones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #007BFF;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+button:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Botón "=" más llamativo */
+button:nth-child(15) {
+  background: #28a745;
+}
+button:nth-child(15):hover {
+  background: #1e7e34;
+  box-shadow: 0 0 10px #1eff5d;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
   .calculadora {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  .pantalla {
-    width: 100%;
-    height: 60px;
-    background: #eaeaea;
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    text-align: right;
-  }
-  
-  .botones {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-  
-  button {
     padding: 15px;
-    font-size: 18px;
-    border: none;
-    border-radius: 10px;
-    background: #007BFF;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
+    max-width: 90%;
   }
-  
-  button:hover {
-    background: #0056b3;
+
+  button {
+    padding: 12px;
+    font-size: 16px;
   }
-  
-  @media (max-width: 400px) {
-    .calculadora {
-      padding: 15px;
-      max-width: 90%;
-    }
-  
-    button {
-      padding: 12px;
-      font-size: 16px;
-    }
-  }
-  
+}
